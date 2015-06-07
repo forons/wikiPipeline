@@ -1,0 +1,5 @@
+12:53:51.512 - 1: org.apache.uima.tools.jcasgen.UimaLoggerProgressMonitor.subTask(35): INFO:  >>JCasGen Output going to '../src/test/java'
+12:53:51.548 - 1: org.apache.uima.tools.jcasgen.UimaLoggerProgressMonitor.subTask(35): INFO:  >>JCasGen Reading the XML TAE descriptor, and creating types, for xml input file '../desc/Iyas/Lowercase.xml'.
+12:53:51.613 - 1: org.apache.uima.tools.jcasgen.UimaLoggerProgressMonitor.subTask(35): INFO:  >>JCasGen Replacing: 'qa.qcri.qf.type.Lowercase'.
+12:53:51.614 - 1: org.apache.uima.tools.jcasgen.UimaLoggerProgressMonitor.subTask(35): INFO:  >>JCasGen Replacing: 'qa.qcri.qf.type.Lowercase_Type'.
+12:53:51.614 - 1: org.apache.uima.tools.jcasgen.UimaLoggerProgressMonitor.done(31): INFO:  ** JCasGen Done.

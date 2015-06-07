@@ -1,0 +1,18 @@
+Class: qa.qcri.qf.annotators.IllinoisChunker
+  No meta data [description] found
+
+Class: qa.qcri.qf.annotators.WhitespaceTokenizer
+  No meta data [description] found
+
+Class: qa.qcri.qf.tutorial.LowercaseAnnotator
+  No meta data [description] found
+  No description found for parameter [language]
+
+Class: qa.qcri.qf.wikipediaannotator.WikipediaAnnotator
+  No meta data [description] found
+  No description found for parameter [aidaURI]
+
+Class: qa.qcri.qf.wikipediaannotatorTest.WikipediaAnnotator
+  No meta data [description] found
+  No description found for parameter [wikipediaTokenizerModel]
+

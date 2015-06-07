@@ -1,0 +1,4 @@
+classpath*:qa/qcri/qf/annotators/IllinoisChunker.xml
+classpath*:qa/qcri/qf/annotators/WhitespaceTokenizer.xml
+classpath*:qa/qcri/qf/chunker/ConstituencyTreeChunker.xml
+classpath*:qa/qcri/qf/wikipediaannotator/WikipediaAnnotator.xml
