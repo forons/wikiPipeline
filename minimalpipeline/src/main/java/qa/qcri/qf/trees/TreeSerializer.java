@@ -145,18 +145,18 @@ public class TreeSerializer {
 		if (this.enableAdditionalLabels) {
 			labels.addAll(node.getAdditionalLabels());
 		}
+		if (this.enableWikipediaTags) {
+			if (node.getMetadata().containsKey(RichNode.WIKI_KEY)) {
+				labels.add(node.getMetadata().get(RichNode.WIKI_KEY));
+			}
+		}
 
 		if (this.enableRelationalTags) {
 			if (node.getMetadata().containsKey(RichNode.REL_KEY)) {
 				labels.add(node.getMetadata().get(RichNode.REL_KEY));
 			}
 		}
-		if (this.enableWikipediaTags) {
-			if (node.getMetadata().containsKey(RichNode.WIKI_KEY)) {
-				labels.add(node.getMetadata().get(RichNode.WIKI_KEY));
-			}
-			// TODO aggiungere anche qui il nostro annotatore con il nostro tag
-		}
+		
 
 		leftParts.add(Joiner.on(LABEL_SEPARATOR).join(labels));
 

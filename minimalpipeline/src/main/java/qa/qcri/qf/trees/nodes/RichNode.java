@@ -29,6 +29,8 @@ public interface RichNode {
 	
 	public static final String WIKI_KEY = "WIK";
 	
+	public static final String WIKI_LINK = "WIKI_LINK";
+	
 	//TODO aggiungere la nostra chiave
 
 	/**

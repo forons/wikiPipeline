@@ -75,6 +75,7 @@ public class RichTree {
 								token.getEnd())) {
 							tokenNode.getMetadata().put(RichNode.WIKI_KEY,
 									RichNode.WIKI_KEY);
+							tokenNode.getMetadata().put(RichNode.WIKI_LINK, wikiToken.getWikipediaLink());
 							// System.out.println("\t" +
 							// token.getCoveredText());
 							// System.out.println("\t" +

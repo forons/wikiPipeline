@@ -68,16 +68,16 @@ public class MarkTreesOnRepresentation {
 			formToNodes.get(form).add(richToken);
 		}
 
-		for (RichTokenNode richToken : shortestList) {
-			String form = richToken.getRepresentation(parameterList);
-			List<RichTokenNode> matchingNodes = formToNodes.get(form);
-			if (matchingNodes != null) {
-				for (RichTokenNode matchingNode : matchingNodes) {
-					Marker.addRelationalTag(matchingNode, this.markingStrategy);
-				}
-				Marker.addRelationalTag(richToken, this.markingStrategy);
-			}
-		}
+//		for (RichTokenNode richToken : shortestList) {
+//			String form = richToken.getRepresentation(parameterList);
+//			List<RichTokenNode> matchingNodes = formToNodes.get(form);
+//			if (matchingNodes != null) {
+//				for (RichTokenNode matchingNode : matchingNodes) {
+//					Marker.addRelationalTag(matchingNode, this.markingStrategy);
+//				}
+//				Marker.addRelationalTag(richToken, this.markingStrategy);
+//			}
+//		}
 	}
 
 	/**

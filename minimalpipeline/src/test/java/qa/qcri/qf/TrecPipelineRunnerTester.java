@@ -17,7 +17,9 @@ import org.apache.uima.UIMAException;
 import qa.qcri.qf.datagen.ngram.CharacterNGramIdf;
 import qa.qcri.qf.datagen.ngram.IdfModel;
 import qa.qcri.qf.datagen.rr.Reranking;
+import qa.qcri.qf.datagen.rr.RerankingTestOnlyWiki;
 import qa.qcri.qf.datagen.rr.RerankingTestRelAndWiki;
+import qa.qcri.qf.datagen.rr.RerankingTrainOnlyWiki;
 import qa.qcri.qf.datagen.rr.RerankingTrainRelAndWiki;
 import qa.qcri.qf.features.PairFeatureFactory;
 import qa.qcri.qf.fileutil.FileManager;
@@ -180,8 +182,8 @@ public class TrecPipelineRunnerTester {
 			String stoplist = lang.equals("it") ? STOPWORDS_IT_PATH
 					: STOPWORDS_EN_PATH;
 
-			MarkTreesOnRepresentation marker = new MarkTreesOnRepresentation(
-					new MarkTwoAncestors()).useStopwords(stoplist);
+//			MarkTreesOnRepresentation marker = new MarkTreesOnRepresentation(
+//					new MarkTwoAncestors()).useStopwords(stoplist);
 
 			MarkTreesOnWikipedia markerWiki = new MarkTreesOnWikipedia(
 					new MarkTwoAncestors()).useStopwords(stoplist);
@@ -214,11 +216,18 @@ public class TrecPipelineRunnerTester {
 				pipeline.performAnalysis();
 			}
 
-			Reranking dataGenerator = new RerankingTrainRelAndWiki(fm,
+//			Reranking dataGenerator = new RerankingTrainRelAndWiki(fm,
+//					trainOutputDir, ae, new TreeSerializer()
+//							.enableWikipediaTags().enableRelationalTags()
+//							.enableAdditionalLabels(), pf,
+//					new PosChunkTreeProvider(), markerWiki, marker)
+//					.setParameterList(parameterList);
+			
+			Reranking dataGenerator = new RerankingTrainOnlyWiki(fm,
 					trainOutputDir, ae, new TreeSerializer()
 							.enableWikipediaTags().enableRelationalTags()
 							.enableAdditionalLabels(), pf,
-					new PosChunkTreeProvider(), markerWiki, marker)
+					new PosChunkTreeProvider(), markerWiki)
 					.setParameterList(parameterList);
 			
 			pipeline.setCandidatesToKeep(candidatesToKeepInTrain);
@@ -244,10 +253,16 @@ public class TrecPipelineRunnerTester {
 			/**
 			 * Sets up the generation for test
 			 */
-			dataGenerator = new RerankingTestRelAndWiki(fm, testOutputDir, ae,
+//			dataGenerator = new RerankingTestRelAndWiki(fm, testOutputDir, ae,
+//					new TreeSerializer().enableWikipediaTags()
+//							.enableRelationalTags().enableAdditionalLabels(),
+//					pf, new PosChunkTreeProvider(), markerWiki, marker)
+//					.setParameterList(parameterList);
+			
+			dataGenerator = new RerankingTestOnlyWiki(fm, testOutputDir, ae,
 					new TreeSerializer().enableWikipediaTags()
 							.enableRelationalTags().enableAdditionalLabels(),
-					pf, new PosChunkTreeProvider(), markerWiki, marker)
+					pf, new PosChunkTreeProvider(), markerWiki)
 					.setParameterList(parameterList);
 
 			pipeline.setCandidatesToKeep(candidatesToKeepInTest);

@@ -102,7 +102,7 @@ public class TutorialExample {
 		 */
 
 		TreeSerializer ts = new TreeSerializer().enableRelationalTags()
-				.enableAdditionalLabels().enableWikipediaTags().useSquareBrackets();
+				.enableAdditionalLabels().useSquareBrackets();
 
 		/**
 		 * Output the plain trees
@@ -116,7 +116,7 @@ public class TutorialExample {
 				new MarkTwoAncestors()).useStopwords(STOPWORDS_EN_PATH);
 
 		markerWiki.markTrees(questionTree, passageTree, parameterList);
-
+		ts.enableWikipediaTags();
 		
 		System.out.println("\nTrees with WIKIPEDIA information");
 		System.out.println(ts.serializeTree(questionTree, parameterList));
